@@ -63,7 +63,7 @@ export function ServicesSection() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="text-center hover-lift bg-background p-8 rounded-2xl shadow-sm"
+              className="text-center hover-lift bg-background p-8 border rounded-2xl shadow-sm"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div

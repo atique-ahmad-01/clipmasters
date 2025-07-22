@@ -2,7 +2,7 @@ import { Play, Mail, Globe, Instagram, Linkedin, Briefcase } from "lucide-react"
 
 export function FooterSection() {
   return (
-    <footer className="bg-apple-gray text-white py-16">
+    <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
