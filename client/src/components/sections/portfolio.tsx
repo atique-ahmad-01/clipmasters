@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { cn } from "@/lib/utils";
 import { Play } from "lucide-react";
+import demoVideo1 from '../assets/demo1.mp4';
+import demoVideo2 from '../assets/demo2.mp4';
+import demoVideo3 from '../assets/demo3.mp4';
+import demoVideo4 from '../assets/demo4.mp4';
 
 export function PortfolioSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
@@ -10,25 +14,25 @@ export function PortfolioSection() {
 
   const portfolioItems = [
     {
-      image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      videoSrc: demoVideo1,
       title: "SaaS Product Demo",
       description: "90-second conversion masterpiece",
       alt: "Professional video production setup with cameras and lighting equipment",
     },
     {
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      videoSrc: demoVideo2,
       title: "AI Platform Launch",
       description: "Ultimate VSL that raised $2M",
       alt: "Modern startup office with collaborative workspace and computers",
     },
     {
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      videoSrc: demoVideo3,
       title: "Agency Case Study",
       description: "300% conversion increase",
       alt: "Diverse startup team collaborating around a table with laptops",
     },
     {
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      videoSrc: demoVideo4,
       title: "Course Launch VSL",
       description: "$1M+ in pre-orders",
       alt: "Elegant presentation setup with premium brand materials and modern workspace",
@@ -61,21 +65,21 @@ export function PortfolioSection() {
           {portfolioItems.map((item, index) => (
             <div
               key={item.title}
-              className="hover-lift cursor-pointer group"
+              className="group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative rounded-2xl overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+              <div className="relative rounded-2xl overflow-hidden border-4 border-gray-300 transition-transform duration-300 group-hover:scale-105">
+                <video
+                  src={item.videoSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/50">
-                  <div className="text-white text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                      <Play className="w-8 h-8 text-white fill-white ml-1" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-white text-center px-4">
+                    <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
                     <p className="text-sm opacity-90">{item.description}</p>
                   </div>
                 </div>
