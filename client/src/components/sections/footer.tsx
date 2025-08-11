@@ -52,7 +52,7 @@ export function FooterSection() {
 
         <div className="text-center text-gray-400 text-sm border-t border-gray-800 pt-8">
           <p>
-            &copy; 2024 Clipmasters. All rights reserved. | Privacy Policy | Terms
+            &copy; 2025 Clipmasters. All rights reserved. | Privacy Policy | Terms
             of Service
           </p>
         </div>
