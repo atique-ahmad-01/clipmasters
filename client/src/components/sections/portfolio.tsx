@@ -15,27 +15,27 @@ export function PortfolioSection() {
   const portfolioItems = [
     {
       videoSrc: demoVideo1,
-      title: "SaaS Product Demo",
-      description: "90-second conversion masterpiece",
-      alt: "Professional video production setup with cameras and lighting equipment",
+      title: "",
+      description: "",
+      alt: "",
     },
     {
       videoSrc: demoVideo2,
-      title: "AI Platform Launch",
-      description: "Ultimate VSL that raised $2M",
-      alt: "Modern startup office with collaborative workspace and computers",
+      title: "",
+      description: "",
+      alt: "",
     },
     {
       videoSrc: demoVideo3,
-      title: "Agency Case Study",
-      description: "300% conversion increase",
-      alt: "Diverse startup team collaborating around a table with laptops",
+      title: "",
+      description: "",
+      alt: "",
     },
     {
       videoSrc: demoVideo4,
-      title: "Course Launch VSL",
-      description: "$1M+ in pre-orders",
-      alt: "Elegant presentation setup with premium brand materials and modern workspace",
+      title: "",
+      description: "",
+      alt: "",
     },
   ];
 

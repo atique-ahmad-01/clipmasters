@@ -10,30 +10,30 @@ export function CreatorPlansSection() {
   const { ref: noteRef, isVisible: noteVisible } = useScrollReveal();
 
   const plans = [
-    {
-      icon: Heart,
-      title: "TikTok & IG Reels",
-      price: "$200",
-      period: "/mo+",
-      description: "Professional editing for social content",
-      color: "bg-pink-100 text-pink-500",
-    },
-    {
-      icon: Youtube,
-      title: "YouTube Shorts",
-      price: "$500",
-      period: "/mo+",
-      description: "Complete packages for channel growth",
-      color: "bg-red-100 text-red-500",
-    },
-    {
-      icon: Mic,
-      title: "Podcast + Clips",
-      price: "$800",
-      period: "/mo+",
-      description: "Full repurposing and clip creation",
-      color: "bg-purple-100 text-purple-500",
-    },
+        {
+        icon: Heart,
+        title: "Basic",
+        price: "$990",
+        period: "/month",
+        description: "10 High Quality Motion Graphic videos including scriptwriting and thumbnail creation",
+        color: "bg-pink-100 text-pink-500",
+      },
+      {
+        icon: Youtube,
+        title: "Pro",
+        price: "$1,750",
+        period: "/month",
+        description: "20 High Quality Motion Graphic videos including scriptwriting and thumbnail creation",
+        color: "bg-red-100 text-red-500",
+      },
+      {
+        icon: Mic,
+        title: "Custom",
+        price: "Custom",
+        period: "/package",
+        description: "20+ High Quality Motion Graphic videos including scriptwriting and thumbnail creation",
+        color: "bg-purple-100 text-purple-500",
+      },
   ];
 
   const openCalendly = () => {
