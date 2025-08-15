@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Play, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from '../assets/logo.png';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,8 +38,12 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Play className="w-4 h-4 text-white fill-white" />
+            <div className="w-16 h-16 rounded-xl flex items-center justify-center">
+              <img 
+                src={logo} 
+                alt="Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl font-semibold text-foreground">Clipmasters</span>
           </div>

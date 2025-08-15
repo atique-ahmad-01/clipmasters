@@ -1,4 +1,5 @@
 import { Play, Mail, Globe, Instagram, Linkedin, Briefcase } from "lucide-react";
+import logo from '../assets/logo.png';
 
 export function FooterSection() {
   return (
@@ -6,8 +7,12 @@ export function FooterSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Play className="w-4 h-4 text-white fill-white" />
+            <div className="w-16 h-16 rounded-xl flex items-center justify-center">
+              <img 
+                src={logo} 
+                alt="Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-2xl font-bold">Clipmasters™</span>
           </div>
