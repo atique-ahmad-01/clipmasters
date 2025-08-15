@@ -145,7 +145,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email Us</h3>
-                  <p className="text-muted-foreground">hello@clipmasters.io</p>
+                  <p className="text-muted-foreground">hello@clipmastrs.online</p>
                 </div>
               </div>
             </Card>
