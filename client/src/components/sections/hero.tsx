@@ -46,7 +46,7 @@ export function HeroSection() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
               <span className="text-sm text-blue-800 font-medium">
-                🎬 See Our Process in Action
+                🏅 Proudly Serving 50+ Happy Clients
               </span>
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
