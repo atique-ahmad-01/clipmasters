@@ -50,9 +50,9 @@ export function HeroSection() {
               </span>
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              We don’t 
+              we don’t just
               <br />
-              <span className="text-blue-500">Just edit videos.</span>
+              <span className="text-blue-500"> EDIT VIDEOS.</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We build machines that make customers say “yes.”

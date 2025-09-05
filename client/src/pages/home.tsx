@@ -2,6 +2,7 @@ import { Navigation } from "@/components/ui/navigation";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { HeroSection } from "@/components/sections/hero";
 import { ServicesSection } from "@/components/sections/services";
+import { RoiSection } from "@/components/sections/roisection";
 import { ClientsSection } from "@/components/sections/clients";
 import { PackagesSection } from "@/components/sections/packages";
 import { PortfolioSection } from "@/components/sections/portfolio";
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
+        <RoiSection />
         <ClientsSection />
         <PackagesSection />
         <PortfolioSection />

@@ -6,6 +6,7 @@ import demoVideo1 from '../assets/demo1.mp4';
 import demoVideo2 from '../assets/demo2.mp4';
 import demoVideo3 from '../assets/demo3.mp4';
 import demoVideo4 from '../assets/demo4.mp4';
+import demoVideo5 from '../assets/demo5.mp4';
 
 export function PortfolioSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
@@ -13,6 +14,12 @@ export function PortfolioSection() {
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
 
   const portfolioItems = [
+    {
+      videoSrc: demoVideo5,
+      title: "",
+      description: "",
+      alt: "",
+    },
     {
       videoSrc: demoVideo1,
       title: "",
