@@ -108,7 +108,7 @@ export function ServicesSection() {
       </div>
       <p className="text-muted-foreground mt-4 max-w-2xl mx-auto leading-relaxed">
         Your entire Visual Sales Letter — done-for-you — so you can scale, sell,
-        and launch without lifting a finger.
+        and launch without lifting a finger. 
       </p>
     </div>
   </div>
