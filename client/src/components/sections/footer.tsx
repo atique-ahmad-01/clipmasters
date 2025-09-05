@@ -17,7 +17,7 @@ export function FooterSection() {
             <span className="text-2xl font-bold">Clipmasters™</span>
           </div>
           <p className="text-gray-300 text-lg">
-            High-Converting Video for Startups & Modern Brands
+            Videos that sell. Stories that scale.
           </p>
         </div>
 

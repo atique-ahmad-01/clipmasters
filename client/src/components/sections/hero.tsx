@@ -46,16 +46,18 @@ export function HeroSection() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
               <span className="text-sm text-blue-800 font-medium">
-                🏅 Proudly Serving 50+ Happy Clients
+                🎬 Turning Complex Ideas into Videos That Sell
               </span>
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              New approach.
+              We don’t 
               <br />
-              <span className="text-blue-500">Even more impact.</span>
+              <span className="text-blue-500">Just edit videos.</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Watch how we transform startup stories into compelling visual narratives that drive results.
+              We build machines that make customers say “yes.”
+              Most companies spend months explaining what makes them different.
+We help you do it in 60 seconds.
             </p>
           </div>
 
