@@ -102,10 +102,10 @@ export function PortfolioSection() {
             ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <Button className="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 mx-auto">
+          {/* <Button className="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 mx-auto">
             <Play className="w-5 h-5" />
             <span>Watch Full Demo Reel</span>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>
