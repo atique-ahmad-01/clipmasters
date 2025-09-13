@@ -25,7 +25,7 @@ export function FooterSection() {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8 text-gray-300">
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>hello@clipmastrs.online</span>
+              <span>hello@clipmasters.uk</span>
             </div>
             <div className="flex items-center space-x-2">
               <Globe className="w-4 h-4" />
