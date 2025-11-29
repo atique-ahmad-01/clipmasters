@@ -36,7 +36,7 @@ export function FooterSection() {
 
         <div className="flex justify-center space-x-6 mb-8">
           <a
-            href="#"
+            href="https://www.instagram.com/clipmasters.uk?igsh=ajd3aHhieDY2c3cy"
             className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
           >
             <Instagram className="w-5 h-5" />
