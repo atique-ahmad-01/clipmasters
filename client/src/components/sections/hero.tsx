@@ -46,18 +46,18 @@ export function HeroSection() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
               <span className="text-sm text-blue-800 font-medium">
-                🎬 Turning Complex Ideas into Videos That Sell
+                              Leading B2B Animated Video Production Agency
               </span>
             </div>
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              we don’t just
+            <h3 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+             Premium Video Marketing Solutions for 
               <br />
-              <span className="text-blue-500"> EDIT VIDEOS</span>
-            </h2>
+                          <span className="text-blue-500"> SaaS, AI, Tech, Web3 & Digital Companies</span>
+            </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We build machines that make customers say “yes.”
-              Most companies spend months explaining what makes them different.
-We help you do it in 60 seconds.
+                          The most innovative companies don’t just build great products —
+                          they tell great stories. Clipmasters helps SaaS, AI, and Tech companies create video content that explains and converts.
+
             </p>
           </div>
 
@@ -76,7 +76,7 @@ We help you do it in 60 seconds.
           {/* Call to action below video */}
           <div className="text-center mt-16">
             <p className="text-gray-600 mb-8 text-lg">
-              Ready to create your own success story?
+                          Want an estimate for your video marketing project? Book a call to get started.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
@@ -85,7 +85,7 @@ We help you do it in 60 seconds.
               size="lg"
             >
               <Video className="w-5 h-5" />
-              <span>Get a VSL Quote</span>
+                              <span>Schedule a Call</span>
             </Button>
             <Button
               variant="outline"
@@ -99,7 +99,7 @@ We help you do it in 60 seconds.
               size="lg"
             >
               <Play className="w-5 h-5" />
-              <span>Watch Our Work</span>
+                              <span>View Our Work</span>
             </Button>
             </div>
           </div>
