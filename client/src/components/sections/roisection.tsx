@@ -10,26 +10,26 @@ export function RoiSection() {
   const features = [
     {
       icon: Film,
-      title: "Crisp Storytelling",
-      description: "We make your product simple and irresistible to understand.",
+          title: "Strategy & Scripting",
+          description: "We map your product, audience, and goals to craft a narrative that converts.",
       color: "text-primary bg-primary/10",
     },
     {
       icon: Cpu,
-      title: "Next-Level Motion Design",
-      description: "Graphics that feel like Silicon Valley — not cookie-cutter templates.",
+        title: "Storyboarding & Design",
+        description: "High-end illustration and design systems aligned with your brand identity.",
       color: "text-purple-500 bg-purple-500/10",
     },
     {
       icon: Star,
-      title: "Premium Look & Feel",
-      description: "Videos polished so well your customers instantly trust you.",
+        title: "Animation & Voiceover",
+        description: "Smooth, premium animation paired with professional voiceover talent.",
       color: "text-green-500 bg-green-500/10",
     },
     {
       icon: Target,
-      title: "Built for ROI",
-      description: "Every second engineered to move customers closer to buying.",
+        title: "Delivery & Distribution",
+        description: "Final assets optimized for LinkedIn, YouTube, landing pages, and paid campaigns.",
       color: "text-orange-500 bg-orange-500/10",
     },
   ];
@@ -46,13 +46,10 @@ export function RoiSection() {
           )}
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Our Work Has One Goal: ROI
+                      Our Process
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Every second of a Clipmasters video is designed to do one thing — <br />
-            <span className="font-semibold text-foreground">
-              move your customer closer to buying.
-            </span>
+                      We follow a clear, efficient, and proven workflow to create high-performing videos for SaaS, AI, and digital-first companies.
           </p>
         </div>
 
@@ -92,11 +89,6 @@ export function RoiSection() {
             taglineVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <div className="inline-flex items-center px-6 py-3 bg-background rounded-full shadow-sm">
-            <span className="text-primary font-semibold">
-              This isn’t “just editing.” This is your content machine.
-            </span>
-          </div>
         </div>
       </div>
     </section>
