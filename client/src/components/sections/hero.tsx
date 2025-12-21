@@ -1,115 +1,147 @@
 import { Button } from "@/components/ui/button";
-import { Play, Video } from "lucide-react";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { cn } from "@/lib/utils";
-import bannerVideo from '../assets/banner.mp4';
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
+import heroGif from "../assets/herogif.gif";
+import heroImage1 from "../assets/heroimage1.jpg";
+import heroImage2 from "../assets/heroimage2.jpg";
+import heroTallGif from "../assets/hero9x16.gif";
+
+// TRUSTED LOGOS
+import miich from "../assets/miich.png";
+import bitlease from "../assets/bitlease.png";
+import louislimited from "../assets/louislimited.png";
+import milo from "../assets/milo.png";
+import sfxclub from "../assets/sfxclub.png";
+import earnit from "../assets/earnit.png";
+
+const words = ["SaaS", "AI", "Tech", "Web3", "Digital Companies"];
+
+const logos = [
+    miich,
+    bitlease,
+    louislimited,
+    milo,
+    sfxclub,
+    earnit,
+];
 
 export function HeroSection() {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
-  const { ref: titleRef, isVisible: titleVisible } = useScrollReveal();
-  const { ref: subtitleRef, isVisible: subtitleVisible } = useScrollReveal();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
-  const { ref: trustRef, isVisible: trustVisible } = useScrollReveal();
-  const { ref: videoRef, isVisible: videoVisible } = useScrollReveal();
+    const [index, setIndex] = useState(0);
+    const [visible, setVisible] = useState(true);
 
-  const videoElementRef = useRef(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setVisible(false);
+            setTimeout(() => {
+                setIndex((prev) => (prev + 1) % words.length);
+                setVisible(true);
+            }, 300);
+        }, 2800);
 
-  // useEffect(() => {
-  //   const video = videoElementRef.current;
-  //   if (video) {
-  //     video.addEventListener('loadeddata', () => setIsVideoLoaded(true));
-  //   }
-  // }, []);
+        return () => clearInterval(interval);
+    }, []);
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+    const openCalendly = () => {
+        window.open("https://calendly.com/clipmastersagency/strategycall", "_blank");
+    };
 
-  const openCalendly = () => {
-    window.open("https://calendly.com/clipmastersagency/strategycall", "_blank");
-  };
+    const scrollToPortfolio = () => {
+        const el = document.getElementById("portfolio");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
 
-  return (
-    <>
+    return (
+        <section className="relative bg-white overflow-hidden pt-24 pb-20 px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      {/* Apple-Style Video Showcase Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
-              <span className="text-sm text-blue-800 font-medium">
-                              Leading B2B Animated Video Production Agency
-              </span>
+                {/* LEFT CONTENT */}
+                <div>
+                    <span className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-6">
+                        Leading B2B Animated Video Production Agency
+                    </span>
+
+                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold text-slate-900 leading-tight mb-6 tracking-tight">
+                        Premium Video Marketing Solutions for{" "}
+                        <span
+                            className={`inline-block text-blue-500 transition-all duration-500 ease-in-out ${
+                                visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+                            }`}
+                        >
+                            {words[index]}
+                        </span>
+                    </h1>
+
+                    <p className="text-lg text-slate-600 max-w-xl mb-10 leading-relaxed">
+                        The most innovative companies don’t just build great products —
+                        they tell great stories. Clipmasters helps SaaS, AI, and Tech
+                        companies create video content that explains and converts.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+                        <Button
+                            onClick={openCalendly}
+                            className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white px-9 py-4 rounded-full font-medium text-lg"
+                            size="lg"
+                        >
+                            Schedule a Call
+                        </Button>
+
+                        <Button
+                            variant="outline"
+                            onClick={scrollToPortfolio}
+                            className="w-full sm:w-auto border-2 border-slate-900 text-slate-900 hover:bg-slate-50 px-9 py-4 rounded-full font-medium text-lg"
+                            size="lg"
+                        >
+                            View Our Work
+                        </Button>
+                    </div>
+                </div>
+
+                {/* RIGHT VISUAL COLLAGE */}
+                <div className="relative flex justify-center lg:justify-start">
+                    <div className="grid grid-cols-2 gap-y-4 gap-x-4 lg:gap-x-0 items-center">
+                        <div className="flex flex-col gap-4 lg:translate-x-10">
+                            <div className="w-full lg:w-[85%] aspect-video rounded-xl overflow-hidden shadow-xl">
+                                <img src={heroImage1} className="w-full h-full object-cover" />
+                            </div>
+                            <div className="w-full lg:w-[85%] aspect-video rounded-xl overflow-hidden shadow-2xl">
+                                <img src={heroGif} className="w-full h-full object-cover" />
+                            </div>
+                            <div className="w-full lg:w-[85%] aspect-video rounded-xl overflow-hidden shadow-xl">
+                                <img src={heroImage2} className="w-full h-full object-cover" />
+                            </div>
+                        </div>
+
+                        <div className="flex justify-center lg:-ml-6">
+                            <div className="w-48 h-[340px] sm:w-52 sm:h-[400px] lg:w-56 lg:h-[460px] rounded-2xl overflow-hidden shadow-2xl">
+                                <img src={heroTallGif} className="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-             Premium Video Marketing Solutions for 
-              <br />
-                          <span className="text-blue-500"> SaaS, AI, Tech, Web3 & Digital Companies</span>
-            </h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                          The most innovative companies don’t just build great products —
-                          they tell great stories. Clipmasters helps SaaS, AI, and Tech companies create video content that explains and converts.
 
-            </p>
-          </div>
+            {/* TRUSTED BY */}
+            <div className="mt-20">
+                <p className="text-center text-sm text-slate-500 mb-10">
+                    Trusted by Companies worldwide
+                </p>
 
-          {/* Clean Video Container */}
-          <div className="relative w-full relative w-full aspect-[3/2] sm:aspect-[3/1] overflow-hidden rounded-2xl ">
-            <video
-              className="w-full h-full object-cover"
-              src={bannerVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-          </div>
-          
-          {/* Call to action below video */}
-          <div className="text-center mt-16">
-            <p className="text-gray-600 mb-8 text-lg">
-                          Want an estimate for your video marketing project? Book a call to get started.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-              onClick={openCalendly}
-              className="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 min-w-[200px] justify-center"
-              size="lg"
-            >
-              <Video className="w-5 h-5" />
-                              <span>Schedule a Call</span>
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => {
-                const element = document.getElementById("portfolio");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="px-8 py-4 rounded-full font-semibold text-lg border-2 hover:border-primary transition-colors flex items-center space-x-2"
-              size="lg"
-            >
-              <Play className="w-5 h-5" />
-                              <span>View Our Work</span>
-            </Button>
+                <div className="trusted-wrapper">
+                    <div className="trusted-fade-left" />
+                    <div className="trusted-fade-right" />
+
+                    <div className="trusted-track">
+                        {Array.from({ length: 10 }).map((_, i) =>
+                            logos.map((logo, j) => (
+                                <div className="trusted-item" key={`${i}-${j}`}>
+                                    <img src={logo} alt="" />
+                                </div>
+                            ))
+                        )}
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        {/* Background decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 opacity-5 rounded-full animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-200 opacity-5 rounded-full animate-pulse" style={{ animationDelay: '-3s' }} />
-      </section>
-
-    </>
-  );
+        </section>
+    );
 }
