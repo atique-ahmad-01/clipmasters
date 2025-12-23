@@ -1,96 +1,102 @@
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+﻿import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { cn } from "@/lib/utils";
-import { Target, Film, Star, Cpu } from "lucide-react";
 
 export function RoiSection() {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
-  const { ref: featuresRef, isVisible: featuresVisible } = useScrollReveal();
-  const { ref: taglineRef, isVisible: taglineVisible } = useScrollReveal();
+    const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+    const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal();
 
-  const features = [
-    {
-      icon: Film,
-          title: "Strategy & Scripting",
-          description: "We map your product, audience, and goals to craft a narrative that converts.",
-      color: "text-primary bg-primary/10",
-    },
-    {
-      icon: Cpu,
-        title: "Storyboarding & Design",
-        description: "High-end illustration and design systems aligned with your brand identity.",
-      color: "text-purple-500 bg-purple-500/10",
-    },
-    {
-      icon: Star,
-        title: "Animation & Voiceover",
-        description: "Smooth, premium animation paired with professional voiceover talent.",
-      color: "text-green-500 bg-green-500/10",
-    },
-    {
-      icon: Target,
-        title: "Delivery & Distribution",
-        description: "Final assets optimized for LinkedIn, YouTube, landing pages, and paid campaigns.",
-      color: "text-orange-500 bg-orange-500/10",
-    },
-  ];
+    const steps = [
+        {
+            step: "01",
+            title: "Strategy & Scripting",
+            description:
+                "We map your product, audience, and goals to craft a narrative that converts.",
+        },
+        {
+            step: "02",
+            title: "Storyboarding & Design",
+            description:
+                "High-end illustration and design systems aligned with your brand identity.",
+        },
+        {
+            step: "03",
+            title: "Animation & Voiceover",
+            description:
+                "Smooth, premium animation paired with professional voiceover talent.",
+        },
+        {
+            step: "04",
+            title: "Delivery & Distribution",
+            description:
+                "Final assets optimized for LinkedIn, YouTube, landing pages, and paid campaigns.",
+        },
+    ];
 
-  return (
-    <section id="roi" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div
-          ref={headerRef}
-          className={cn(
-            "text-center mb-16 transition-all duration-800",
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                      Our Process
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                      We follow a clear, efficient, and proven workflow to create high-performing videos for SaaS, AI, and digital-first companies.
-          </p>
-        </div>
+    return (
+        <section id="process" className="py-28 bg-white">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* Features */}
-        <div
-          ref={featuresRef}
-          className={cn(
-            "grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 transition-all duration-800 delay-200",
-            featuresVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="text-center hover-lift bg-background p-8 border rounded-2xl shadow-sm"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div
-                className={cn(
-                  "w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6",
-                  feature.color
-                )}
-              >
-                <feature.icon className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm">{feature.description}</p>
+                {/* Header */}
+                <div
+                    ref={headerRef}
+                    className={cn(
+                        "text-center mb-24 transition-all duration-700",
+                        headerVisible
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-6"
+                    )}
+                >
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 mb-6">
+                        Our Process
+                    </h2>
+                    <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                        We follow a clear, efficient, and proven workflow to create
+                        high-performing videos for SaaS, AI, and digital-first companies.
+                    </p>
+                </div>
+
+                {/* Cards */}
+                <div
+                    ref={cardsRef}
+                    className={cn(
+                        "grid md:grid-cols-2 lg:grid-cols-4 gap-10 transition-all duration-700 delay-150",
+                        cardsVisible
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-6"
+                    )}
+                >
+                    {steps.map((step) => (
+                        <div
+                            key={step.title}
+                            className="relative rounded-3xl p-8 overflow-hidden text-white shadow-2xl"
+                        >
+                            {/* Multi-tone gradient background */}
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#60a5fa,transparent_40%),radial-gradient(circle_at_80%_0%,#2563eb,transparent_45%),radial-gradient(circle_at_50%_80%,#1e40af,transparent_50%),linear-gradient(180deg,#0f172a,#020617)] blur-[2px]" />
+
+                            {/* Content */}
+                            <div className="relative z-10">
+
+                                {/* Top panel */}
+                                <div className="bg-white/90 text-slate-900 rounded-2xl p-4 mb-4 backdrop-blur-md">
+                                    <span className="text-xs font-semibold text-blue-600">
+                                        Step {step.step}
+                                    </span>
+                                    <h3 className="text-sm font-semibold mt-1">
+                                        {step.title}
+                                    </h3>
+                                </div>
+
+                                {/* Description – now directly under */}
+                                <p className="text-sm text-slate-200 leading-relaxed">
+                                    {step.description}
+                                </p>
+
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
             </div>
-          ))}
-        </div>
-
-        {/* Tagline */}
-        <div
-          ref={taglineRef}
-          className={cn(
-            "text-center transition-all duration-800 delay-400",
-            taglineVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

@@ -1,120 +1,138 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Play, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from '../assets/logo.png';
+import logo from "../assets/logo.png";
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const scrollToSection = (id: string) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+            setIsMobileMenuOpen(false);
+        }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return (
+        <nav className="fixed top-4 left-0 right-0 z-50 px-4">
+            <div
+                className={cn(
+                    "mx-auto max-w-7xl transition-all duration-300",
+                    isScrolled ? "opacity-95" : "opacity-100"
+                )}
+            >
+                <div className="flex items-center justify-between rounded-full bg-[#E5E5E5] px-6 py-3 shadow-sm">
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
+                    {/* LEFT — LOGO */}
+                    <div className="flex items-center gap-3">
+                        <img
+                            src={logo}
+                            alt="Clipmasters"
+                            className="w-10 h-10 object-contain"
+                        />
+                        <span className="font-semibold text-lg text-black">
+                            Clipmasters
+                        </span>
+                    </div>
 
-  return (
-    <nav
-      className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled
-          ? "glass-effect border-b border-gray-100"
-          : "bg-transparent"
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
-            <div className="w-16 h-16 rounded-xl flex items-center justify-center">
-              <img 
-                src={logo} 
-                alt="Logo" 
-                className="w-full h-full object-contain"
-              />
+                    {/* CENTER — DESKTOP NAV */}
+                    <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+                        <button
+                            onClick={() => scrollToSection("services")}
+                            className="hover:text-black transition"
+                        >
+                            Services
+                        </button>
+                        <button
+                            onClick={() => scrollToSection("packages")}
+                            className="hover:text-black transition"
+                        >
+                            Prices
+                        </button>
+                        <button
+                            onClick={() => scrollToSection("portfolio")}
+                            className="hover:text-black transition"
+                        >
+                            Our Cases
+                        </button>
+                    </div>
+
+                    {/* RIGHT — CTA */}
+                    <div className="hidden md:flex items-center gap-3">
+                        <Button
+                            onClick={() =>
+                                window.open(
+                                    "https://calendly.com/clipmastersagency/strategycall",
+                                    "_blank"
+                                )
+                            }
+                            className="rounded-full bg-slate-900 text-white px-6 py-2 text-sm hover:bg-slate-800"
+                        >
+                            Book a Call →
+                        </Button>
+                    </div>
+
+                    {/* MOBILE MENU */}
+                    <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                        <SheetTrigger asChild>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="md:hidden text-black"
+                            >
+                                <Menu className="w-5 h-5" />
+                            </Button>
+                        </SheetTrigger>
+
+                        <SheetContent side="right" className="w-[320px]">
+                            <div className="flex flex-col gap-6 mt-10">
+                                <button
+                                    onClick={() => scrollToSection("services")}
+                                    className="text-lg font-medium"
+                                >
+                                    Services
+                                </button>
+                                <button
+                                    onClick={() => scrollToSection("packages")}
+                                    className="text-lg font-medium"
+                                >
+                                    Prices
+                                </button>
+                                <button
+                                    onClick={() => scrollToSection("portfolio")}
+                                    className="text-lg font-medium"
+                                >
+                                    Our Cases
+                                </button>
+
+                                <Button
+                                    onClick={() =>
+                                        window.open(
+                                            "https://calendly.com/clipmastersagency/strategycall",
+                                            "_blank"
+                                        )
+                                    }
+                                    className="mt-6 rounded-full bg-slate-900 text-white py-3 hover:bg-slate-800"
+                                >
+                                    Book a Call
+                                </Button>
+                            </div>
+                        </SheetContent>
+                    </Sheet>
+                </div>
             </div>
-            <span className="text-xl font-semibold text-foreground">Clipmasters</span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("packages")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Packages
-            </button>
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Portfolio
-            </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="btn-primary text-white px-4 py-2 rounded-full text-sm font-medium"
-            >
-              Get Quote
-            </Button>
-          </div>
-
-          {/* Mobile Navigation */}
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="sm" className="md:hidden">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-8">
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="text-left py-3 text-lg font-medium hover:text-primary transition-colors"
-                >
-                  Services
-                </button>
-                <button
-                  onClick={() => scrollToSection("packages")}
-                  className="text-left py-3 text-lg font-medium hover:text-primary transition-colors"
-                >
-                  Packages
-                </button>
-                <button
-                  onClick={() => scrollToSection("portfolio")}
-                  className="text-left py-3 text-lg font-medium hover:text-primary transition-colors"
-                >
-                  Portfolio
-                </button>
-                <Button
-                  onClick={() => scrollToSection("contact")}
-                  className="btn-primary text-white mt-4"
-                  size="lg"
-                >
-                  Get Quote
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
-    </nav>
-  );
+        </nav>
+    );
 }
